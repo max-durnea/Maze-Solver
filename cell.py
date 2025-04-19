@@ -78,7 +78,7 @@ class Cell():
         to_center = Point(to_cell.x1 + to_cell.size // 2, to_cell.y1 + to_cell.size // 2)
         line = Line(my_center, to_center)
         
-        if undo:
+        if not undo:
             line.draw(self.win.canvas, "red")
         else:
             line.draw(self.win.canvas, "gray")

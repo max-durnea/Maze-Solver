@@ -48,3 +48,28 @@ class Window():
             print(f"Canvas saved as {filename.replace('.ps', '.png')}")
         except ImportError:
             print("Pillow library is not installed. Cannot convert to PNG.")
+    def clear(self):
+        self.canvas.delete("all")  # Clear the canvas
+    def save_canvas_solution_as_image(self, filename="maze.ps"):
+        # Save the canvas to a PostScript file (ps format)
+        # Find the next available file name (mazeX.png)
+        file_number = 1
+        while True:
+            filename = f"maze_solution{file_number}.png"
+            filename = os.path.join("maze", filename)
+            if not os.path.exists(filename):
+                break
+            file_number += 1
+        #save the canvas as a Postscript file inside the maze folder
+        if not os.path.exists("maze"):
+            os.makedirs("maze")
+        self.canvas.postscript(file=filename)
+        print(f"Canvas saved as {filename}")
+        
+        # Optionally, convert it to PNG using Pillow
+        try:
+            img = Image.open(filename)
+            img.save(filename.replace(".ps", ".png"))
+            print(f"Canvas saved as {filename.replace('.ps', '.png')}")
+        except ImportError:
+            print("Pillow library is not installed. Cannot convert to PNG.")
