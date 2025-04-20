@@ -20,8 +20,7 @@ def main():
     # Save the canvas to an image after the maze is created
     win.save_canvas_as_image("maze.ps")  # Save the canvas as a .ps file and convert to .png
     maze.reset_cells_visited()  # Reset visited status for all cells
-    #maze.solve()  # Solve the maze
-    maze.solve_bfs()  # Solve the maze using BFS
+    maze.solve()  # Solve the maze
     win.save_canvas_solution_as_image("sol.ps")  # Save the solved maze as a .ps file and convert to .png
     # Optionally, solve the maze using BFS
     time.sleep(2)  # Wait for a moment before solving with BFS
