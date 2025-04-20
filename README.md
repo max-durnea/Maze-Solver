@@ -33,7 +33,7 @@ Before running the project, make sure you have the following:
 To install Ghostscript on Ubuntu/Debian-based systems:
 ```bash
 sudo apt-get install ghostscript
-
+```
 ## ▶️ How to Run
 
 1. Clone the repository or download the source files.
