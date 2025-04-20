@@ -1,2 +1,2 @@
-pillow
-tkinter
+tk
+Pillow
